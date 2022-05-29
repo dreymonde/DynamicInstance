@@ -34,10 +34,10 @@ extension Dynamic where T: Decodable {
     }
 }
 
-protocol ExplicitlyDynamic { }
+public protocol ExplicitlyDynamic { }
 
 extension Dynamic where T: ExplicitlyDynamic {
-    subscript<V>(dynamicMember keyPath: KeyPath<DynamicInstance, V>) -> V {
+    public subscript<V>(dynamicMember keyPath: KeyPath<DynamicInstance, V>) -> V {
         return self.dynamic[keyPath: keyPath]
     }
 }
